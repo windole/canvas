@@ -15,7 +15,7 @@
     		var canvas=document.getElementById('canvas');
 
     		canvas.width=1024;
-    		canvas.height=668;
+    		canvas.height=568;
 
     		var context=canvas.getContext("2d");
 
@@ -30,6 +30,11 @@
     		ball.x+=ball.vx;
     		ball.y+=ball.vy;
     		ball.vy+=ball.g;
+
+    		if ( ball.y>=568-ball.r) {
+    			ball.y=568-ball.r;
+    			ball.vy=-0.5*ball.vy;
+    		}
     	}
 
     	function render(cxt) {
