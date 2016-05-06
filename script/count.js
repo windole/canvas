@@ -4,7 +4,7 @@ var RADIUS = 8;
 var MARGIN_TOP = 60;
 var MARGIN_LEFT = 30;
 
-const endTime = new Date(2016,4,6,18,52,37);  //月数是五月！
+const endTime = new Date(2016,4,8,18,52,37);  //月数是五月！
 var curShowTime = 0
 
 window.onload = function(){
