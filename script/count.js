@@ -4,7 +4,7 @@ var RADIUS = 8;
 var MARGIN_TOP = 60;
 var MARGIN_LEFT = 30;
 
-const endTime = new Date(2016,4,10,18,52,37);  //月数是五月！
+const endTime = new Date(2016,4,15,18,52,37);  //月数是五月！
 var curShowTime = 0
 
 var balls=[];
@@ -81,6 +81,8 @@ function update(){
         curShowTime = nextShowTimeSeconds;
     }
     updateBalls();
+
+    console.log(balls.length);
 }
 
 
@@ -96,6 +98,17 @@ function updateBalls() {
             balls[i].vy = - balls[i].vy*0.75;
         }
     }
+
+    var cnt =0;
+    for (var i = 0; i < balls.length; i++)
+        if (balls[i].x+RADIUS>0 && balls[i].x-RADIUS<WINDOW_WIDTH) 
+            balls[cnt++]=balls[i]
+        
+
+        while(balls.length>Math.min(300,cnt)){
+            balls.pop();
+        }
+    
 }
 
 
