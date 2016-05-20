@@ -4,9 +4,9 @@ var RADIUS = 8;
 var MARGIN_TOP = 60;
 var MARGIN_LEFT = 30;
 
-//const endTime = new Date(2016,4,21,18,52,37);  //月数是五月！
-var endTime=new Date();
-endTime.setTime(endTime.getTime()+25*60*1000);
+// //const endTime = new Date(2016,4,21,18,52,37);  //月数是五月！
+// var endTime=new Date();
+// endTime.setTime(endTime.getTime()+25*60*1000);
 var curShowTime = 0
 
 var balls=[];
@@ -40,9 +40,13 @@ window.onload = function(){
 
 function getCurrentShowTime() {
     var curTime = new Date();
-    var ret = endTime.getTime() - curTime.getTime();
-    ret = Math.round( ret/1000 )
-    return ret >= 0 ? ret : 0;
+    // var ret = endTime.getTime() - curTime.getTime();
+    // ret = Math.round( ret/1000 )
+    // return ret >= 0 ? ret : 0;
+    var ret =curTime.getHours()*3600+curTime.getMinutes()*60+curTime.getSeconds();
+
+    return ret;
+    
 }
 
 function update(){
