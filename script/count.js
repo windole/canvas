@@ -4,13 +4,20 @@ var RADIUS = 8;
 var MARGIN_TOP = 60;
 var MARGIN_LEFT = 30;
 
-const endTime = new Date(2016,4,15,18,52,37);  //月数是五月！
+const endTime = new Date(2016,4,21,18,52,37);  //月数是五月！
 var curShowTime = 0
 
 var balls=[];
 const colors=["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];
 
 window.onload = function(){
+
+    WINDOW_WIDTH=document.documentElement.clientWidth-20;
+    WINDOW_HEIGHT=document.documentElement.clientHeight-20;
+
+    MARGIN_LEFT=Math.round(WINDOW_WIDTH/10);
+    RADIUS=Math.round(WINDOW_WIDTH*4/5/108)-1;
+    MARGIN_TOP=Math.round(WINDOW_HEIGHT/5);
 
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext("2d");
